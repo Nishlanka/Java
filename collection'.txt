@@ -1,0 +1,307 @@
+Java Collection
+
+What is a collection?
+Usually an instance of java.util.Collection 
+
+Collection interface have those sub interfaces like Set,List,Queue
+
+Set
+-HashSet
+-LinkedHashSet
+-TreeSet
+
+Queue
+-PriorityQueue
+-ArrayDeque
+
+List
+-ArrayList
+-LinkedList
+-Vector
+-Stack
+
+List Interface
+
+List interface is the child interface of Collection interface It can have duplicate values.
+List interface is implemented by the classes ArrayList, LinkedList, Vector, and Stack
+List <data-type> list1= new ArrayList();  
+List <data-type> list2 = new LinkedList();  
+List <data-type> list3 = new Vector();  
+List <data-type> list4 = new Stack()
+*Difference between arrays and lists
+	Arrays have a fixed size.
+*ArrayList
+ It uses a dynamic array to store the duplicate element of different data types.It maintains the insertion order.
+	ArrayList<String> list=new ArrayList<String>();
+	list.add("kamal");
+	list.add("vijay");
+	list.add(2,"nimal");
+	Iterator itr=list.iterator();
+	while(itr.hasNext()){
+	System.out.println(itr.next())
+	}
+
+output
+Ravi
+Vijay
+Ravi
+Ajay
+
+*LinkedList
+	Same as the arraylist but implemnetaion is differen from dynamic array concept.It uses Double LinkedList.
+	LinkedList<String> list=new LinkedList<String>();
+	list.add("kamal");
+	list.add("vijay");
+	Iterator itr=list.iterator();
+	while(itr.hasNext()){
+	System.out.println(itr.next())
+	}
+explain
+when using arraylist it uses dynamic array concept.Each element has a indexed value like an array.If we want to add or remove an element
+have to change the index value of many element so it ia time consuming.
+If we used a linkedList it uses the concept of double linklist.Each element has two reference to next element and previous element.
+So when a element is adding or removing it is not required to change the the other elements index no it has to change the
+reference nodes of the inserted element and before and after elements of the list.
+But when we fetch or search an element quick method is using a arraylist because it has index numbers for every elements.
+But normally in projects use arrayList.
+
+*Vector
+Vector uses a dynamic array to store the data elements. It is similar to ArrayList. However, It is synchronized.
+Vector<String> v=new Vector<String>();  
+v.add("Ayush");  
+v.add("Amit");  
+v.add("Ashish");  
+v.add("Garima");  
+Iterator<String> itr=v.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next()); 
+//for(String i:v){
+	System.out.println(i);
+} 
+}  
+vector is same as the arraList but when exceed the limit the capacity of vector is increased in 100% and arraylis is increased 50% 
+So vectors are more memory consuming.
+*Stack
+The stack is the subclass of Vector. It implements the last-in-first-out data structure, i.e., Stack. The stack contains all of the
+methods of Vector class and also provides its methods like boolean push(), boolean peek(), boolean push(object o), which defines its properties.
+
+Stack<String> stack = new Stack<String>();  
+stack.push("Ayush");  
+stack.push("Garvit");  
+stack.push("Amit");  
+stack.push("Ashish");  
+stack.push("Garima");  
+stack.pop();  
+Iterator<String> itr=stack.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+output
+Ayush
+Garvit
+Amit
+Ashish
+
+*HashSet
+This is not allow the insertion order when we try to fetch data not comes them as inserted order because they are stored in heap memories and when we
+try to fetch them give the value of nearest heap memory.
+And also HashSet not allows duplicate values(All Set classes).
+We can store at most one null value(All Set classes)
+Set<Integer> set=new HashSet<String>()
+set.add(12);  
+set.add(10);  
+set.add(6);
+set.add(6)  
+set.add(4)
+
+for(int i:set){
+System.out.println(i)
+}
+output
+10
+12
+6
+4
+  
+*TreeSet
+Java TreeSet class implements the Set interface that uses a tree for storage. Like HashSet, 
+TreeSet also contains unique elements. However, the access and retrieval time of TreeSet is quite fast. 
+The elements in TreeSet stored in ascending order.
+//Creating and adding elements  
+TreeSet<String> set=new TreeSet<String>();  
+set.add("Ravi");  
+set.add("Vijay");  
+set.add("Ravi");  
+set.add("Ajay");  
+//traversing elements  
+Iterator<String> itr=set.iterator();  
+while(itr.hasNext()){  
+System.out.println(itr.next());  
+}  
+}  
+}  
+Output:
+
+Ajay
+Ravi
+Vijay
+
+*LinkedHashSet
+LinkedHashSet class represents the LinkedList implementation of Set Interface. 
+It extends the HashSet class and implements Set interface. Like HashSet, It also contains unique elements.
+It maintains the insertion order and permits null elements.
+
+*ArrayList functions
+
+  al.add("Mango");  
+  al.add("Apple");  
+  al.add("Banana");  
+  al.add("Grapes");  
+  //accessing the element    
+  System.out.println("Returning element: "+al.get(1));//it will return the 2nd element, because index starts from 0  
+  //changing the element  
+  al.set(1,"Dates");  
+  //Traversing list  
+  for(String fruit:al)    
+    System.out.println(fruit);    
+  
+ }  
+
+Sorting a ArrayList
+ System.out.println("Sorting numbers...");  
+  //Creating a list of numbers  
+  List<Integer> list2=new ArrayList<Integer>();  
+  list2.add(21);  
+  list2.add(11);  
+  list2.add(51);  
+  list2.add(1);  
+  //Sorting the list  
+  Collections.sort(list2);  
+   //Traversing list through the for-each loop  
+  for(Integer number:list2)  
+    System.out.println(number);  
+ }
+
+*Iterating Collection through remaining ways
+
+ ArrayList<String> list=new ArrayList<String>();//Creating arraylist  
+           list.add("Ravi");//Adding object in arraylist  
+           list.add("Vijay");  
+           list.add("Ravi");  
+           list.add("Ajay");  
+//method 1
+Iterator<Iterator> itr=list.Iterator();
+while(itr.hasNext()){
+System.out.println(itr.next())
+}
+//method 2
+for(String itr:list){
+System.out.println(itr);
+}
+
+method 3
+for(int i=0;i<list.size();i++){
+System.out.println(i);
+}
+
+Java HashMap
+In the ArrayList chapter, you learned that Arrays store items as an ordered collection, 
+and you have to access them with an index number (int type). A HashMap however,
+ store items in "key/value" pairs, and you can access them by an index of another type (e.g. a String).
+One object is used as a key (index) to another object (value). 
+It can store different types: String keys and Integer values, or the same type, like: String keys and String values:
+
+public class Main {
+  public static void main(String[] args) {
+
+    // Create a HashMap object called people
+    HashMap<String, Integer> people = new HashMap<String, Integer>();
+
+
+    // Add keys and values (Name, Age)
+    people.put("John", 32);
+    people.put("Steve", 30);
+    people.put("Angie", 33);
+
+    for (String i : people.keySet()) {
+      System.out.println("key: " + i + " value: " + people.get(i));
+    }
+  }
+}
+
+Arrays
+
+int [] arr={2,3,4,5}
+cars[0]="abc"
+System.out.println(cars[0])
+for(int i=0;i<arr.length;i++){
+System.out.println(cars[i]);
+}
+
+for(int a:cars){
+System.out.println(cars[i]);
+}
+
+public class Main {
+  public static void main(String[] args) {
+    int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
+    int x = myNumbers[1][2];
+    System.out.println(x);  
+	
+		
+  }
+}
+output 7
+
+public class Main {
+   public static void main(String[] args) {
+     int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };
+     for (int i = 0; i < myNumbers.length; ++i) {//this is for  first array {1,2,3,4} no 0 and second array {5,6,7} no 1
+        for(int j = 0; j < myNumbers[i].length; ++j) {//this for elements
+           System.out.println(myNumbers[i][j]);
+      
+   }
+}
+
+copying one array into another
+
+class Array{
+
+public static void main(String[] args){
+	int[] arr1={1,2,3,4,5}
+
+	int[] arr2=new int[arr1.length];
+
+	for(int i=0;i<arr1.length;i++){
+		arr2[i]=arr1[i];
+	}
+
+
+public class DuplicateElement {  
+public static void main(String[] args) {  
+        //Initialize array  
+        int [] arr = new int [] {1, 2, 3, 4, 2, 7, 8, 8, 3}; 
+//reverse an array
+	for(int i=0;i<arr.length/2;i++){
+		int temp=arr[i];
+		arr[i]=arr[arr.length-i-1];
+		rr[arr.length-i-1]=temp;
+		
+	} 
+        System.out.println("Duplicate elements in given array: ");  
+        //Searches for duplicate element  
+        for(int i = 0; i < arr.length; i++) {  
+            for(int j = i + 1; j < arr.length; j++) {  
+                if(arr[i] == arr[j])  
+                    System.out.println(arr[j]);  
+            }  
+        }  
+    }  
+}  
+
+
+
+
+
+
+

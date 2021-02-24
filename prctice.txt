@@ -1,0 +1,29 @@
+first
+springboot crud develop with git full thing
+create a springboot project
+in project folder open git bash
+type git init
+     git add .
+     git commit -m ""
+     git remote add origin
+     git push -u origin master
+
+second
+create netbean project and do some main functions.
+crud example
+radio button
+combobox
+table load for button from textfield
+tabpane
+bufferedreader
+
+
+third
+collections study 
+identify difference between collections types and do basic 
+functions.
+difference between arrays and collections
+array functions.
+
+four
+oop practicles

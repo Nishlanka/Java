@@ -1,0 +1,133 @@
+java oop concept explain basics
+
+without oop concept there have to codie lotof coding in a single file but using oop we can reduce the maintain cost, save
+time so using objects we can devide the program into sub objects and finaly can be used in the main program.So therefore we can add new functions
+for the system easily.
+
+class is like a blueprint and objects are like the houses of this blueprint.
+Car car1=new car()
+car.color="red"
+car.model="abcc"
+
+System.out.println()
+(inside the System class there is a variable called out and inside the out variable there is a method called println())
+
+Person.exit()  //call the method exit() inside the Person class.
+
+*Constructors
+
+class Cat{
+
+	int num;
+	int num1;
+	
+	public Cat(){
+	}//this is default constructor it should not to be implement
+	
+	public Cat(){
+	num=5;
+	num1=7;
+	System.out.println("abccccc");
+
+	public Cat(int x){
+	num=x;
+	}
+}
+
+class Car{
+	
+	Cat c1=new Car();
+	System.out.println(c1.num);
+}
+//output is 
+abccccc
+5
+//constructors do not have an return type even void it starts when the program starting.
+
+
+*Method Overloading
+class Cat{
+
+method1(5);
+method1(5,2);
+}
+void method1(int x){
+}
+void method1(int x,int y){
+}
+
+method overloading is creating two or many methods with the same name in one class by changing the method signature. 
+overloaded method can have different return types and they should have different parameters.
+public static void method(){
+	System.out.println();
+}
+public static String method(){
+	return "hii";
+}
+//above method are not overloaded because when call the method it can be identified which should be called.
+
+
+*Inheritence
+
+A------->B
+this means A class is inherited by the B class
+A is sub class and B is super class
+
+class B{
+name;
+age;
+
+method1{
+}
+method2{
+}
+} 
+
+class A extends B{
+color;
+
+method3{
+}
+method4{
+}
+}
+//class A have the all the parameters and methods of the B and if we dont want to inherit a parameter or method we have to use the private keyword.
+A b= new A();
+when we create a object callinng the constructor of the B class All clasess are loaded which have relations with the B classes.all methods and parameters
+include in this two classes are loaded into the object.
+
+//Access Modifiers
+public = everyone can visible.
+protected = tamantai, subclass(package or other package), package
+default = tamanta, package
+private = tamanta
+
+if class or variables are protected they can be arranged by the same class,other subclasses of same package or different packages and also 
+visible for the existing packages.
+
+*Overriding
+This is the method which change the method body of a subclass which inherited from a super class.
+
+ex->
+	
+	class Monkey{
+	void climb(){
+	//khkhkhk
+	}
+	}
+
+	class A extends Monkey{
+	void climb(){
+	//hjkhkjhkj
+	}
+}
+
+
+
+
+
+
+
+
+
+
